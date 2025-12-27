@@ -28,6 +28,8 @@ using Surging.Core.CPlatform.Utilities;
 using Surging.Core.DotNetty;
 using Surging.Core.ProxyGenerator;
 using Surging.Core.Zookeeper;
+using Surging.Apm.Skywalking;
+using Surging.Apm.Skywalking.Abstractions;
 using ApiGateWayConfig = Surging.Core.ApiGateWay.AppConfig;
 using ZookeeperConfigInfo = Surging.Core.Zookeeper.Configurations.ConfigInfo;
 
@@ -91,9 +93,11 @@ namespace Surging.ApiGateway
                 option.AddFilter(new ServiceExceptionFilter());
                 //option.UseProtoBufferCodec();
                 option.UseMessagePackCodec();
+                option.UseSkywalking();
                 builder.Register(m => new CPlatformContainer(ServiceLocator.Current));
             });
             ServiceLocator.Current = builder.Build();
+            ServiceLocator.Current.Resolve<IInstrumentStartup>().StartAsync();
             return new AutofacServiceProvider(ServiceLocator.Current);
 
         }

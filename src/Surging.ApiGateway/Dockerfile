@@ -2,14 +2,14 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy entire source (simpler approach for complex dependencies)
+# Copy entire source
 COPY . .
 
-# Restore all dependencies
-RUN dotnet restore Surging.ApiGateway/Surging.ApiGateway.csproj
+# Restore all dependencies from the root context
+RUN dotnet restore src/Surging.ApiGateway/Surging.ApiGateway.csproj
 
 # Build and publish
-WORKDIR /src/Surging.ApiGateway
+WORKDIR /src/src/Surging.ApiGateway
 RUN dotnet publish -c Release -o /app/publish
 
 # Stage 2: Runtime
