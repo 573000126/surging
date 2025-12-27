@@ -1,15 +1,15 @@
 # Stage 1: Build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+WORKDIR /build
 
 # Copy entire source
 COPY . .
 
-# Restore all dependencies from the root context
-RUN dotnet restore src/Surging.ApiGateway/Surging.ApiGateway.csproj
+# Restore all dependencies via the solution file
+RUN dotnet restore src/Surging.sln
 
 # Build and publish
-WORKDIR /src/src/Surging.ApiGateway
+WORKDIR /build/src/Surging.ApiGateway
 RUN dotnet publish -c Release -o /app/publish
 
 # Stage 2: Runtime

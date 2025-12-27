@@ -267,8 +267,6 @@ __pycache__/
 api/
 _site/
 
-/src/Surging.ApiGateway
+# Allow Surging.ApiGateway
+!/src/Surging.ApiGateway/
 /src/Surging.Services/Surging.Services.Server/Dockerfile
-
-# Allow Dockerfile in Surging.ApiGateway
-!/src/Surging.ApiGateway/Dockerfile
