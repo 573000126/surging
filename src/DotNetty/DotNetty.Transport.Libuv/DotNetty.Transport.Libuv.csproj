@@ -18,7 +18,7 @@
     <AssemblyName>DotNetty.Transport.Libuv</AssemblyName>
     <AssemblyOriginatorKeyFile>../../DotNetty.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>False</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PublicSign>false</PublicSign>
     <PackageTags>socket;tcp;udp;protocol;netty;dotnetty;network</PackageTags>
     <PackageProjectUrl>https://github.com/Azure/DotNetty/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

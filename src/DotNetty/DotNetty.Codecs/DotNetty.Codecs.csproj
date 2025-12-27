@@ -17,7 +17,7 @@
     <AssemblyName>DotNetty.Codecs</AssemblyName>
     <AssemblyOriginatorKeyFile>../../DotNetty.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>False</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PublicSign>false</PublicSign>
     <PackageId>DotNetty.Codecs</PackageId>
     <PackageTags>socket;tcp;protocol;netty;dotnetty;network;codec</PackageTags>
     <PackageProjectUrl>https://github.com/Azure/DotNetty/</PackageProjectUrl>

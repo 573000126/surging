@@ -13,8 +13,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Surging.ApiGateway;
-using Surging.Apm.Skywalking;
-using Surging.Apm.Skywalking.Abstractions;
 using Surging.Core.ApiGateWay;
 using Surging.Core.ApiGateWay.Configurations;
 using Surging.Core.ApiGateWay.OAuth.Implementation.Configurations;
@@ -90,7 +88,6 @@ namespace Surging.ApiGateway
                 option.UseDotNettyTransport();
                 option.AddApiGateWay();
                 option.AddRpcTransportDiagnostic();
-                option.UseSkywalking();
                 option.AddFilter(new ServiceExceptionFilter());
                 //option.UseProtoBufferCodec();
                 option.UseMessagePackCodec();
@@ -119,7 +116,6 @@ namespace Surging.ApiGateway
             ServiceLocator.Current.Resolve<IServiceProxyFactory>();
             ServiceLocator.Current.Resolve<IServiceCacheManager>().SetCachesAsync(addressDescriptors);
             ServiceLocator.Current.Resolve<IConfigurationWatchProvider>();
-            ServiceLocator.Current.Resolve<IInstrumentStartup>().StartAsync();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
