@@ -18,7 +18,7 @@ WORKDIR /app
 
 # Copy published app
 COPY --from=build /app/publish .
-COPY --from=build /src/Surging.ApiGateway/Configs ./Configs/
+COPY --from=build /build/src/Surging.ApiGateway/Configs ./Configs/
 
 # Environment variables with defaults
 ENV ASPNETCORE_URLS=http://+:729
