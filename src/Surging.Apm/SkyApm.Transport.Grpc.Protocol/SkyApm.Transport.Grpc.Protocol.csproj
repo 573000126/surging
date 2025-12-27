@@ -13,6 +13,7 @@
         <RootNamespace>SkyApm.Transport.Grpc.Protocol</RootNamespace>
     </PropertyGroup>
 
+<!--
     <ItemGroup>
         <PackageReference Include="Google.Protobuf" Version="3.10.1" />
         <PackageReference Include="Grpc" Version="2.24.0" />
@@ -27,4 +28,9 @@
         <Protobuf_NoWarnMissingExpected>true</Protobuf_NoWarnMissingExpected>
         <Protobuf_TouchMissingExpected>true</Protobuf_TouchMissingExpected>
     </PropertyGroup>
+-->
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.10.1" />
+        <PackageReference Include="Grpc" Version="2.24.0" />
+    </ItemGroup>
 </Project>
