@@ -269,3 +269,6 @@ _site/
 
 /src/Surging.ApiGateway
 /src/Surging.Services/Surging.Services.Server/Dockerfile
+
+# Allow Dockerfile in Surging.ApiGateway
+!/src/Surging.ApiGateway/Dockerfile
