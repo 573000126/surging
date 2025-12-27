@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/Surging.ApiGateway/**'
       - 'src/Surging.Core/**'
+      - 'src/Surging.Apm/**'
       - '.github/workflows/docker-apigateway.yml'
   pull_request:
     branches: [ master, main ]
