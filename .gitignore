@@ -270,3 +270,4 @@ _site/
 # Allow Surging.ApiGateway
 !/src/Surging.ApiGateway/
 /src/Surging.Services/Surging.Services.Server/Dockerfile
+src/Surging.ApiGateway/publish_temp/
